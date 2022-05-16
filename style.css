@@ -83,6 +83,9 @@ main {
   background-color: white;
   border-radius: 1.3em 1.3em 0 0;
   padding: 1.5em 1.5em;
+
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -130,16 +133,18 @@ input[type=number]:hover {
   border: 2px solid hsl(172, 67%, 45%);
 }
 
-label {
-  font-size: 1.5em;
-  margin-bottom: .4em;
-}
-
 .num-input,
 .custom-tip {
   border-radius: .4rem;
   background-color: hsl(189, 41%, 97%);
 }
+
+label {
+  font-size: 1.5em;
+  margin-bottom: .4em;
+}
+
+
 
 .num-input {
   padding: .2em 1em .2em 2em;
@@ -201,5 +206,11 @@ button {
 
 
 @media only screen and (min-width: 1000px) {
-  
+  .main-div {
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: flex-start; */
+    /* gap: 0 2em; */
+  }
+
 }
