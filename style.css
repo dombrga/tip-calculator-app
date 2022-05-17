@@ -4,7 +4,10 @@
   --main-font: 'Space Mono', monospace;
   --percent-btn-color: hsl(183, 100%, 15%);
   --white-color: white;
+  --label-color: hsl(186, 14%, 43%);
   --sublabel-color: hsl(184, 14%, 56%);
+  --main-text-color: hsl(172, 67%, 45%);
+  --input-bg-color :hsl(189, 41%, 97%)
 }
 
 * {
@@ -42,47 +45,42 @@ input[type='number']::-webkit-outer-spin-button {
 
 input,
 button,
-.radio-div > label
- {
+.radio-div > label {
   cursor: pointer;
 }
 
-span.display-none { 
-  display: none; 
-}
+span.display-none { display: none; }
 
 /* typography */
-main { 
+main, footer { 
   font-family: var(--main-font);
 }
 
 label {
-  color: hsl(186, 14%, 43%);
+  color: var(--label-color);
   font-size: 1.2em;
 }
 
 .result-label-container > span { letter-spacing: .05em; }
-.result-label-container > .label {
-  color: var(--white-color);
-}
-.result-label-container > .sublabel {
-  color: var(--sublabel-color);
-}
+.result-label-container > .label { color: var(--white-color); }
+.result-label-container > .sublabel { color: var(--sublabel-color); }
 
 .amount-container > span {
-  color: hsl(172, 67%, 45%);
+  color: var(--main-text-color);
   font-size: 2em;
 }
 
-.people-zero {
-  color: rgb(225, 92, 34);
-}
+.people-zero { color: rgb(225, 92, 34); }
+
+footer { font-size: .3em; }
+footer > a { text-decoration: none; }
+footer > a:hover { text-decoration: underline; }
 
 /* layout */
 
 body {
   background-color: hsl(185, 41%, 84%);
-  padding-top: 4em;
+  padding: 4em 0;
 }
 
 header { margin-bottom: 3em; }
@@ -94,6 +92,7 @@ header { margin-bottom: 3em; }
 
 main {
   /* padding: 0 1em 1em; */
+  margin-bottom: 3em;
 }
 
 .main-div {
@@ -154,21 +153,27 @@ main {
 input[type=number] {
   text-align: right;
   font-family: var(--main-font);
-  border: 2px solid hsl(189, 41%, 97%);
+  border: 2px solid var(--input-bg-color);
 }
 
 input[type=number]:hover {
-  border: 2px solid hsl(172, 67%, 45%);
+  border: 2px solid var(--main-text-color);
 }
+input[type=number]:active,
+input[type=number]:focus,
+input[type=number]:focus-visible,
+input[type=number]:focus-within {
+  border: 2px solid var(--main-text-color);
+}
+
 input[type=number]::placeholder {
-  /* border: 2px solid hsl(172, 67%, 45%); */
   color: hsl(185, 10%, 58%);
 }
 
 .num-input,
 .custom-tip {
   border-radius: .4rem;
-  background-color: hsl(189, 41%, 97%);
+  background-color: var(--input-bg-color);
 }
 
 
@@ -222,7 +227,7 @@ input[type=radio] {
  padding: .5em 1em;
  
 
- color: white;
+ color: var(--white-color);
  font-size: 1.3em;
  letter-spacing: .1em;
 }
@@ -235,7 +240,7 @@ input[type=radio] {
 
 input[type=radio]:checked + label {
   color: hsl(183, 100%, 15%);
-  background-color: hsl(172, 67%, 45%);
+  background-color: var(--main-text-color);
 }
 
 .people-zero-container {
@@ -244,7 +249,7 @@ input[type=radio]:checked + label {
 }
 
 .reset-btn {
-  background-color: hsl(172, 67%, 45%);;
+  background-color: var(--main-text-color);;
   padding: .6em;
   border-radius: .4rem;
 
