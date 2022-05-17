@@ -7,7 +7,7 @@
   --label-color: hsl(186, 14%, 43%);
   --sublabel-color: hsl(184, 14%, 56%);
   --main-text-color: hsl(172, 67%, 45%);
-  --input-bg-color :hsl(189, 41%, 97%)
+  --input-bg-color: hsl(189, 41%, 97%);
 }
 
 * {
@@ -72,8 +72,15 @@ label {
 
 .people-zero { color: rgb(225, 92, 34); }
 
-footer { font-size: .3em; }
-footer > a { text-decoration: none; }
+footer { 
+  color: var(--sublabel-color);
+  font-size: .8rem; 
+  text-align: center;
+}
+footer > a { 
+  color: var(--percent-btn-color);
+  text-decoration: none;
+}
 footer > a:hover { text-decoration: underline; }
 
 /* layout */
@@ -156,19 +163,9 @@ input[type=number] {
   border: 2px solid var(--input-bg-color);
 }
 
-input[type=number]:hover {
-  border: 2px solid var(--main-text-color);
-}
-input[type=number]:active,
-input[type=number]:focus,
-input[type=number]:focus-visible,
-input[type=number]:focus-within {
-  border: 2px solid var(--main-text-color);
-}
-
-input[type=number]::placeholder {
-  color: hsl(185, 10%, 58%);
-}
+input[type=number]:hover { border: 2px solid var(--main-text-color); }
+input[type=number]:focus-visible { outline: 2px solid var(--input-bg-color); }
+input[type=number]::placeholder { color: hsl(185, 10%, 58%); }
 
 .num-input,
 .custom-tip {
